@@ -126,7 +126,7 @@ test('Changes a `not ok <number>` into an indented `✘`', (is) => {
   is.end();
 });
 
-test('Cleans up the test footer', (is) => {
+test('Cleans up the git.io/tape footer', (is) => {
   const footer = [
     '# tests 9',
     '# pass  9',
