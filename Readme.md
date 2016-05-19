@@ -17,7 +17,7 @@
 
 
 
-<a                                                             id="/"></a>&nbsp;
+<a id="/"></a>&nbsp;
 
 # tap-spec-integrated
 
@@ -40,7 +40,15 @@ Why?
 
 
 
-<a                                                 id="/installation"></a>&nbsp;
+<a id="/demo"></a>&nbsp;
+
+## Demo
+
+*tap-spec-integrated* formats [its own tests](https://travis-ci.org/studio-b12/tap-spec-integrated).
+
+
+
+<a id="/installation"></a>&nbsp;
 
 ## Installation
 
@@ -51,7 +59,7 @@ $ npm install tap-spec-integrated
 
 
 
-<a                                                        id="/usage"></a>&nbsp;
+<a id="/usage"></a>&nbsp;
 
 ## Usage
 
@@ -64,7 +72,7 @@ require('tap-spec-integrated');
 
 
 
-<a                                                      id="/license"></a>&nbsp;
+<a id="/license"></a>&nbsp;
 
 ## License
 
