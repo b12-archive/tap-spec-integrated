@@ -1,6 +1,6 @@
 {
   "name": "tap-spec-integrated",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A simple integrated TAP reporter. Works in node and browsers",
   "scripts": {
     "coverage": "rm -rf coverage && istanbul cover test.js",
