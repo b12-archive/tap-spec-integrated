@@ -23,6 +23,8 @@
     "istanbul": "^0.4.3",
     "node-dev": "^3.1.1",
     "npm": "^3.9.0",
+    "proxyquire": "^1.7.9",
+    "strip-ansi": "^3.0.1",
     "tape": "^4.5.1",
     "tape-catch": "^1.0.5"
   },
