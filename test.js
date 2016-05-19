@@ -9,6 +9,8 @@ const proxyquire = require('proxyquire');
 const naked = require('strip-ansi');
 
 test('Doesn’t break `console.log`', (is) => {
+  is.plan(3);
+
   const logMessage = 'just logging stuff';
   const extraLogData = {};
   const log = (message, otherArg) => {
@@ -19,8 +21,6 @@ test('Doesn’t break `console.log`', (is) => {
     is.equal(otherArg, extraLogData,
       'leaves extra log data intact'
     );
-
-    is.end();
   };
 
   const mockConsole = { log };
