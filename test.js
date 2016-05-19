@@ -1,3 +1,6 @@
+// Format my own tests, FTW!
+require('.');
+
 const test = require('tape-catch');
 const proxyquire = require('proxyquire');
 const naked = require('strip-ansi');
