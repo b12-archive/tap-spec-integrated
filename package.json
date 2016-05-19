@@ -5,8 +5,8 @@
   "scripts": {
     "coverage": "rm -rf coverage && istanbul cover test.js",
     "coveralls": "npm run coverage && cat coverage/lcov.info | coveralls",
-    "develop": "node-dev --respawn --no-notify --no-deps test.js | tap-spec",
-    "test": "eslint . && node test.js | tap-spec",
+    "develop": "node-dev --respawn --no-notify --no-deps test.js",
+    "test": "eslint . && node test.js",
     "reshrinkwrap": "rm -f npm-shrinkwrap.json && npm install && npm shrinkwrap --dev && git commit -m '[npm run shrinkwrap] Update dependencies' npm-shrinkwrap.json package.json"
   },
   "engines": {
@@ -23,7 +23,6 @@
     "istanbul": "^0.4.3",
     "node-dev": "^3.1.1",
     "npm": "^3.9.0",
-    "tap-spec": "^2.2.2",
     "tape": "^4.5.1",
     "tape-catch": "^1.0.5"
   },
