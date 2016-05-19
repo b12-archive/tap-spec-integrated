@@ -24,7 +24,7 @@ globalConsole.log = function consoleLog() {
 
   const reformattedMessage = (
     (footer.test(message) &&
-      chalk.bold(message.replace(comment, ''))
+      chalk.bold.dim(message.replace(comment, ''))
     ) ||
     (comment.test(message) &&
       `\n${chalk.bold(message.replace(comment, ''))}\n`
