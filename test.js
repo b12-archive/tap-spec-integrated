@@ -33,8 +33,25 @@ test('Doesn’t break `console.log`', (is) => {
   mockConsole.log(logMessage, extraLogData);
 });
 
+test('Doesn’t affect how `console.log` handles non-strings', (is) => {
+  is.plan(1);
+
+  const logValue = {};
+  const log = (outputValue) => {
+    is.equal(outputValue, logValue,
+      'passes the reference directly'
+    );
+  };
+
+  const mockConsole = { log };
+  proxyquire('.', { global: { console: mockConsole } });
+
+  mockConsole.log(logValue);
+});
+
 test('Strips off data for machines', (is) => {
   const log = (message) => {
+    /* istanbul ignore next */
     is.fail(`ignores a “${message}” log line`);
   };
 
