@@ -29,3 +29,16 @@ test('Doesn’t break `console.log`', (is) => {
 
   mockConsole.log(logMessage, extraLogData);
 });
+
+test('Strips off data for machines', (is) => {
+  const log = (message) => {
+    is.fail(`ignores a “${message}” log line`);
+  };
+
+  const mockConsole = { log };
+  proxyquire('.', { global: { console: mockConsole } });
+
+  mockConsole.log('TAP version 13');
+  mockConsole.log('1..178');
+  is.end();
+});

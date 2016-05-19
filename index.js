@@ -2,7 +2,7 @@ const globalConsole = require('global').console;
 const chalk = require('chalk');
 const originalConsoleLog = globalConsole.log;
 
-const plan = /^\d+\.\.\d+$/;
+const plan = /^1\.\.\d+$/;
 const footer = /^#\s+(tests\b|pass\b|fail\b|ok$)/;
 const comment = /^#\s+/;
 const ok = /^ok\s+\d+\s+/;
@@ -19,7 +19,7 @@ globalConsole.log = function consoleLog() {
     message === 'TAP version 13' ||
     plan.test(message)
   ) && !otherArgs.length) {
-    return originalConsoleLog.apply(globalConsole, ['']);
+    return null;
   }
 
   const reformattedMessage = (
