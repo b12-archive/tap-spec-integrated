@@ -1,5 +1,6 @@
+const globalConsole = require('global').console;
 const chalk = require('chalk');
-const originalConsoleLog = console.log;
+const originalConsoleLog = globalConsole.log;
 
 const plan = /^\d+\.\.\d+$/;
 const footer = /^#\s+(tests\b|pass\b|fail\b|ok$)/;
@@ -7,10 +8,10 @@ const comment = /^#\s+/;
 const ok = /^ok\s+\d+\s+/;
 const notOk = /^not ok\s+\d+\s+/;
 
-console.log = function consoleLog() {
+globalConsole.log = function consoleLog() {
   const message = arguments[0];
   if (typeof message !== 'string') {
-    return originalConsoleLog.apply(console, arguments);
+    return originalConsoleLog.apply(globalConsole, arguments);
   }
 
   const otherArgs = Array.prototype.slice.call(arguments, 1);
@@ -18,7 +19,7 @@ console.log = function consoleLog() {
     message === 'TAP version 13' ||
     plan.test(message)
   ) && !otherArgs.length) {
-    return originalConsoleLog.apply(console, ['']);
+    return originalConsoleLog.apply(globalConsole, ['']);
   }
 
   const reformattedMessage = (
@@ -37,7 +38,7 @@ console.log = function consoleLog() {
     chalk.dim(message)
   );
 
-  return originalConsoleLog.apply(console,
+  return originalConsoleLog.apply(globalConsole,
     [reformattedMessage].concat(otherArgs)
   );
 };
